@@ -2,6 +2,8 @@
 
 Welcome to your new project.
 
+From the following Tutorial at https://developers.sap.com/mission.cp-starter-extensions-cap.html
+
 It contains these folders and files, following our recommended project layout:
 
 File or Folder | Purpose
