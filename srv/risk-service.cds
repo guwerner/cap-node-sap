@@ -1,5 +1,5 @@
 using { sap.ui.riskmanagement as my } from '../db/schema';
-
+ 
 @path: 'service/risk'
 service RiskService {
   entity Risks @(restrict : [
