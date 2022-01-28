@@ -20,9 +20,24 @@
 					"localUri": "localService/metadata.xml"
 				}
 			}
+		},
+		"crossNavigation": {
+		   "inbounds": {
+				"Mitigations-display": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+			  	"semanticObject": "Mitigations",
+			  	"action": "display"
+				}
+			}
 		}
 	},
-
+	"sap.cloud": {
+		"public": true,
+		"service": "cpapp.service"
+	,}
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
