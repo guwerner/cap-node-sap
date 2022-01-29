@@ -13,6 +13,10 @@
 			<Title text="{i18n>worklistTitle}" />
 		</semantic:titleHeading>
 
+<!-- 		<semantic:SemanticButton>
+			<Button text="Create" press="_onCreate" />
+		</semantic:SemanticButton> -->
+
 		<semantic:content>
 			<Table
 				id="table"
@@ -27,18 +31,22 @@
 				noDataText="{worklistView>/tableNoDataText}"
 				growing="true"
 				growingScrollToLoad="true"
-				updateFinished=".onUpdateFinished">
+				updateFinished=".onUpdateFinished"
+				mode="MultiSelect">
 
 				<headerToolbar>
 					<Toolbar>
 						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
 						<ToolbarSpacer />
+						<Button text="Add" press="_onAdd" />
+						<Button text="Delete" press="_onDelete" />
 						<SearchField
 							id="searchField"
 							tooltip="{i18n>worklistSearchTooltip}"
 							search=".onSearch"
 							width="auto">
 						</SearchField>
+						
 					</Toolbar>
 				</headerToolbar>
 

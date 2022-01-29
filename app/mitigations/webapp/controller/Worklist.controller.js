@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"../model/formatter",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/m/MessageToast"
+], function (BaseController, JSONModel, formatter, Filter, FilterOperator, MessageToast ) {
 	"use strict";
 
 	return BaseController.extend("ns.mitigations.controller.Worklist", {
@@ -149,6 +150,15 @@ sap.ui.define([
 			if (aTableSearchState.length !== 0) {
 				oViewModel.setProperty("/tableNoDataText", this.getResourceBundle().getText("worklistNoDataWithSearchText"));
 			}
+		},
+		_onAdd: function (oEvent) {
+			var msg = 'Press Add';
+			MessageToast.show(msg);
+		},
+		_onDelete: function (oEvent) {
+			var msg = 'Press Deleted';
+			MessageToast.show(msg);
+
 		}
 
 	});
