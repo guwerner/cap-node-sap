@@ -5,11 +5,11 @@ const cds = require('@sap/cds')
  */
 module.exports = cds.service.impl(async function() {
 
-    const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
+  //  const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
 
-    this.on('READ', 'Suppliers', async req => {
-        return bupa.run(req.query);
-    });
+    // this.on('READ', 'Suppliers', async req => {
+    //     return bupa.run(req.query);
+    // });
 
     this.after('READ', 'Risks', risksData => {
         const risks = Array.isArray(risksData) ? risksData : [risksData];
@@ -46,18 +46,18 @@ module.exports = cds.service.impl(async function() {
         const asArray = x => Array.isArray(x) ? x : [ x ];
 
         // Request all associated suppliers
-        const supplierIds = asArray(risks).map(risk => risk.supplier_ID);
-        const suppliers = await bupa.run(SELECT.from('RiskService.Suppliers').where({ ID: supplierIds }));
+     //   const supplierIds = asArray(risks).map(risk => risk.supplier_ID);
+     //   const suppliers = await bupa.run(SELECT.from('RiskService.Suppliers').where({ ID: supplierIds }));
 
-        // Convert in a map for easier lookup
-        const suppliersMap = {};
-        for (const supplier of suppliers)
-            suppliersMap[supplier.ID] = supplier;
+        // // Convert in a map for easier lookup
+        // const suppliersMap = {};
+        // for (const supplier of suppliers)
+        //     suppliersMap[supplier.ID] = supplier;
 
-        // Add suppliers to result
-        for (const note of asArray(risks)) {
-            note.supplier = suppliersMap[note.supplier_ID];
-        }
+        // // Add suppliers to result
+        // for (const note of asArray(risks)) {
+        //     note.supplier = suppliersMap[note.supplier_ID];
+        // }
 
         return risks;
     });
