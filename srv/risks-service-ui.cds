@@ -13,7 +13,9 @@ using RiskService from './risk-service';
 //     )
 // }
 
-annotate RiskService.Risks with @odata.draft.enabled {
+annotate RiskService.Risks with @odata.draft.enabled;
+
+annotate RiskService.Risks with {
     title    @title : 'Title';
     prio     @title : 'Priority';
     descr    @title : 'Description';
@@ -21,8 +23,9 @@ annotate RiskService.Risks with @odata.draft.enabled {
     impact   @title : 'Impact';
 }
 
+annotate RiskService.Mitigations with @odata.draft.enabled;
 
-annotate RiskService.Mitigations with @odata.draft.enabled{
+annotate RiskService.Mitigations with {
     ID          @(
         UI.Hidden,
         Common : {Text : description}
