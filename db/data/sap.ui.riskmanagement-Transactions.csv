@@ -1,0 +1,2 @@
+id,issuer,siteID,siteArea,siteAreaID,tagID,signedData,meterStart,timestamp,price,roundedPrice,priceUnit,pricingSource,stateOfCharge,timezone,currentTimestamp,currentTotalInactivitySecs,currentInactivityStatus,currentTotalDurationSecs,transactionEndReceived,currentSignedData,status
+1,true,1,Area 151,AreaID,TagID,signedData,11.00,2019-10-24,22.23,10.15,EUR,pricingSource,22.00,CEMT,2022-01-1,2536.00,,523654.00,true,currentSignedData,error

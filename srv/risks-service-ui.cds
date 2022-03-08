@@ -38,7 +38,7 @@ annotate RiskService.Mitigations with {
 
 annotate RiskService.Risks with @(UI : {
     HeaderInfo            : {
-        TypeName       : 'All Risk',
+        TypeName       : 'All Risk 111',
         TypeNamePlural : 'Risks',
         Title          : {
             $Type : 'UI.DataField',
@@ -62,7 +62,6 @@ annotate RiskService.Risks with @(UI : {
 
         {
             Value       : prio,
-            Criticality : criticality
         },
         {
             Value       : impact,
@@ -74,7 +73,7 @@ annotate RiskService.Risks with @(UI : {
     ],
     Facets                : [{
         $Type  : 'UI.ReferenceFacet',
-        Label  : 'Main Risks',
+        Label  : 'Main Risks 22',
         Target : '@UI.FieldGroup#MainRisks'
     }],
     FieldGroup #MainRisks : {Data : [
@@ -88,9 +87,7 @@ annotate RiskService.Risks with @(UI : {
             Criticality : criticality
         }
     ]}
-}, ) {
-
-};
+});
 
 annotate RiskService.Risks with {
     miti @(Common : {

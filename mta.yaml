@@ -84,6 +84,10 @@ modules:
       - nsmitigations.zip
       name: nsmitigations
       target-path: resources/
+    - artifacts:
+      - emobilitycpochargingsessions.zip
+      name: emobilitycpochargingsessions
+      target-path: resources/
 - name: nsrisks
   type: html5
   path: app/risks
@@ -97,6 +101,16 @@ modules:
 - name: nsmitigations
   type: html5
   path: app/mitigations
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: emobilitycpochargingsessions
+  type: html5
+  path: app/chargingsessions
   build-parameters:
     build-result: dist
     builder: custom
@@ -151,19 +165,21 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     service: application-logs
-    service-plan: lite    
+    service-plan: lite
 - name: cpapp-html5-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
-    service: html5-apps-repo
-    service-plan: app-host
     deploy_mode: html5-repo
     enable-parallel-deployments: true
+    service: html5-apps-repo
+    service-plan: app-host
 - name: cpapp-connectivity
   type: org.cloudfoundry.managed-service
   parameters:
     service: connectivity
     service-plan: lite
+parameters:
+  deploy_mode: html5-repo
 build-parameters:
   before-all:
   - builder: custom

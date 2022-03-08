@@ -38,4 +38,10 @@ service RiskService {
     //     isBlocked @title : 'Supplier Blocked';
     // }
 
+  entity Transactions as select from my.Transactions {
+    //any fields not clerar
+    id, currentTimestamp, status, chargeBox, chargeBoxID ,connectorId, tagID, currentTotalInactivitySecs, lastConsumption.value as lastConsumption,  values.cumulatedAmount as cumulatedAmount , values.cumulatedConsumptionWh as currentTotalConsumptionWh, stateOfCharge, roundedPrice, priceUnit, siteID, siteAreaID
+  };
+
+
 }
